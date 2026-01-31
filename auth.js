@@ -46,8 +46,15 @@ class AuthManager {
     async register(email, password, displayName) {
         try {
             // Create user
-            const result = await firebaseAuth.createUserWithEmailAndPassword(email, password);
-            
+            const remember = document.getElementById('rememberMe')?.checked;
+
+await firebaseAuth.setPersistence(
+  remember
+    ? firebase.auth.Auth.Persistence.LOCAL
+    : firebase.auth.Auth.Persistence.SESSION
+);
+
+return await firebaseAuth.signInWithEmailAndPassword(email, password);
             // Update profile
             await result.user.updateProfile({
                 displayName: displayName
