@@ -1,0 +1,31 @@
+{
+  "name": "WE DUMP v2.0",
+  "short_name": "WeDump",
+  "description": "Private photo wall for close friends",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#764ba2",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["social", "photo", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Upload Photo",
+      "short_name": "Upload",
+      "description": "Add a new photo to the wall",
+      "url": "/?upload=true"
+    }
+  ]
+}

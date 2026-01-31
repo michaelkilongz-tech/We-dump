@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - WE DUMP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .contact-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .info-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .info-content h3 {
+            margin-bottom: 5px;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        .info-content p {
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        
+        .info-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: var(--gray-100);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .form-actions {
+            margin-top: 30px;
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 20px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: var(--gray-600);
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .social-links-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .social-link-contact {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link-contact:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .response-time {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to App
+            </a>
+            
+            <div class="contact-header">
+                <h1 class="contact-title">Contact Us</h1>
+                <p class="contact-subtitle">We'd love to hear from you. Get in touch!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="info-title">
+                        <i class="fas fa-comments"></i>
+                        Get in Touch
+                    </h2>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Support</h3>
+                            <p>For general inquiries and support</p>
+                            <a href="mailto:support@wedump.app">support@wedump.app</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Report a Bug</h3>
+                            <p>Found an issue? Let us know</p>
+                            <a href="mailto:bugs@wedump.app">bugs@wedump.app</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Suggestions</h3>
+                            <p>Have ideas to improve WE DUMP?</p>
+                            <a href="mailto:ideas@wedump.app">ideas@wedump.app</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Privacy Concerns</h3>
+                            <p>Report privacy or security issues</p>
+                            <a href="mailto:privacy@wedump.app">privacy@wedump.app</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2 class="form-title">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </h2>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select a topic</option>
+                                <option value="support">Technical Support</option>
+                                <option value="bug">Report a Bug</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="privacy">Privacy Concern</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h2 class="faq-title">
+                    <i class="fas fa-question-circle"></i>
+                    Frequently Asked Questions
+                </h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I invite friends to WE DUMP?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, friends need to sign up with their email. Share the app link with them and they can create their own account. In future updates, we'll add invitation codes for better privacy control.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is WE DUMP really free?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! WE DUMP is completely free to use. We believe in keeping private social spaces accessible. We may add optional premium features in the future, but the core functionality will always remain free.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How is my data protected?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use Firebase for secure authentication and storage. All photos are encrypted in transit and at rest. We don't sell your data or use it for advertising. Read our full Privacy Policy for details.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I delete my account?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can delete your account at any time. Go to Settings → Account → Delete Account. This will permanently remove all your photos and data from our servers.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are the file size limits?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each photo can be up to 5MB. We support JPG, PNG, and GIF formats. For best performance, we recommend uploading photos that are 2000px or less on the longest side.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links-contact">
+                <a href="#" class="social-link-contact">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link-contact">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link-contact">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link-contact">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            
+            <p class="response-time">
+                <i class="fas fa-clock"></i>
+                We typically respond within 24 hours
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back button
+            const backButton = document.querySelector('.back-button');
+            if (backButton && document.referrer.includes('we-dump')) {
+                backButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.history.back();
+                });
+            }
+            
+            // FAQ toggle
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                    
+                    const icon = this.querySelector('i');
+                    if (item.classList.contains('active')) {
+                        icon.className = 'fas fa-chevron-up';
+                    } else {
+                        icon.className = 'fas fa-chevron-down';
+                    }
+                });
+            });
+            
+            // Contact form
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value
+                    };
+                    
+                    // In a real app, you would send this to your backend
+                    // For now, we'll just show a success message
+                    
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

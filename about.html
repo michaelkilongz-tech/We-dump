@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - WE DUMP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .about-logo {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .about-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+        }
+        
+        .about-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+        
+        .section-title i {
+            color: var(--primary);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: var(--gray-100);
+            padding: 25px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-card {
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 4px solid var(--gray-200);
+        }
+        
+        .team-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .team-role {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .version-info {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="about-container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to App
+            </a>
+            
+            <div class="about-header">
+                <div class="about-logo">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <h1 class="about-title">WE DUMP</h1>
+                <p class="about-subtitle">Private photo wall for close friends</p>
+            </div>
+            
+            <div class="about-section">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Our Story
+                </h2>
+                <p>
+                    WE DUMP was born from a simple idea: creating a private, stress-free space 
+                    where close friends can share their everyday moments without the pressure 
+                    of social media perfection.
+                </p>
+                <p>
+                    In a world where social media often feels performative, we wanted to build 
+                    something authentic—a digital wall where you can just "dump" your photos 
+                    and enjoy the collective memories with your closest circle.
+                </p>
+            </div>
+            
+            <div class="about-section">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    Why WE DUMP?
+                </h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="feature-title">Private & Secure</h3>
+                        <p>Only invited friends can see your photos. No public sharing.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="feature-title">No Pressure</h3>
+                        <p>Share unedited, authentic moments. No likes, no followers.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Close Friends Only</h3>
+                        <p>Designed for your inner circle. Quality over quantity.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3 class="feature-title">Always Growing</h3>
+                        <p>The wall keeps expanding with new memories from your crew.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <h2 class="section-title">
+                    <i class="fas fa-users"></i>
+                    Our Values
+                </h2>
+                <ul style="padding-left: 20px; line-height: 1.6;">
+                    <li><strong>Privacy First:</strong> Your photos stay within your trusted circle</li>
+                    <li><strong>Authenticity:</strong> Be real, be yourself, no filters needed</li>
+                    <li><strong>Simplicity:</strong> Easy to use, no complicated features</li>
+                    <li><strong>Community:</strong> Building stronger bonds through shared memories</li>
+                    <li><strong>Respect:</strong> Everyone's privacy and boundaries matter</li>
+                </ul>
+            </div>
+            
+            <div class="about-section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Technical Details
+                </h2>
+                <p><strong>Version:</strong> 2.0.0</p>
+                <p><strong>Built With:</strong> Firebase, JavaScript, HTML5, CSS3</p>
+                <p><strong>Storage:</strong> Encrypted cloud storage with Firebase</p>
+                <p><strong>Security:</strong> End-to-end encryption for all photos</p>
+                <p><strong>Availability:</strong> Web, PWA (Progressive Web App)</p>
+            </div>
+            
+            <div class="about-section">
+                <h2 class="section-title">
+                    <i class="fas fa-handshake"></i>
+                    Connect With Us
+                </h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="team-name">The Creator</h3>
+                        <p class="team-role">Founder & Developer</p>
+                        <div class="team-social">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-avatar" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="team-name">Our Community</h3>
+                        <p class="team-role">Beta Testers & Friends</p>
+                        <div class="team-social">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="version-info">
+                <p>WE DUMP v2.0.0 • Made with ❤️ for real connections</p>
+                <p>© 2024 All rights reserved</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add back button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backButton = document.querySelector('.back-button');
+            if (backButton && document.referrer.includes('we-dump')) {
+                backButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.history.back();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
