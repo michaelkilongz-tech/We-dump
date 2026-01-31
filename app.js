@@ -165,6 +165,8 @@ class WeDumpApp {
     }
     
     async handleLogin() {
+        const loginBtn = document.getElementById('loginBtn');
+loginBtn.disabled = true;
         const email = document.getElementById('loginEmail').value.trim();
         const password = document.getElementById('loginPassword').value.trim();
         
