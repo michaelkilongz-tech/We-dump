@@ -654,9 +654,9 @@ class WeDumpApp {
                 userName: user.displayName || user.email.split('@')[0],
                 userPhotoURL: user.photoURL || '',
                 likes: [],
-                comments: [],
-                createdAt: new Date().toISOString(),
-                updatedAt: new Date().toISOString()
+                comments: [],             
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
             });
             
             // Success
