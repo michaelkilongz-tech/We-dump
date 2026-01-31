@@ -159,11 +159,14 @@ class WeDumpApp {
         });
         
         // Check initial auth state
+        // Check initial auth state
         if (authManager.isAuthenticated()) {
             this.handleUserLogin(authManager.getCurrentUser());
-        }
-    }
-    
+        } else {
+            this.handleUserLogout();
+            this.hideLoading();
+    } 
+        
     async handleLogin() {
         const loginBtn = document.getElementById('loginBtn');
 loginBtn.disabled = true;
